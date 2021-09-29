@@ -6,6 +6,7 @@ public class Smartphone {
     int storage;
 
     final static int MAX_LENGTH=30;
+    final static int RECORD_SIZE=3*MAX_LENGTH*2+8;
 
     public Smartphone(String brand, String model, String cpu, int ram, int storage) {
         this.brand = brand;

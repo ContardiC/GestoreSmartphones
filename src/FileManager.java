@@ -17,7 +17,7 @@ public class FileManager {
             e.printStackTrace();
         }
     }
-    public void writeString(String str,int maxLen){
+    public void writeString(String str){
         try {
             randomAccessFile.writeChars(str);
         }catch(IOException  ex){
@@ -30,6 +30,25 @@ public class FileManager {
                 ex.printStackTrace();
             }
         }
+    }
+    public String readString(){
+        String str="";
+        char c=' ';
+        for(int i=0;i<Smartphone.MAX_LENGTH;i++){
+            try {
+                c=randomAccessFile.readChar();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(c!='\0'){
+                str+=c;
+            }
+        }
+        return str;
+
+
+
+
     }
 
 
